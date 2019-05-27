@@ -22,6 +22,9 @@
 			<input type="text" name="password" value="${param.paswword}" /> <span
 				class="error"> ${passwordErr} </span>
 		</div>
+		<span> class="error"> ${IdpasErr} </span>
+		<div>
+		</div>
 		<button type="submit">
 			<% out.println("Invia"); %>
 		</button>
