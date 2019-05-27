@@ -16,6 +16,11 @@ import services.Adminservices;
 @WebServlet("/LogIn")
 public class LogInController extends HttpServlet {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//Lettura dei parametri
@@ -31,7 +36,7 @@ public class LogInController extends HttpServlet {
 
 		}
 		else {
-			adminForm.setId(req.getParameter(id));
+			adminForm.setId(req.getParameter("id"));
 			adminForm.setPassword(req.getParameter("password"));
 			session.setAttribute("AdminForm", adminForm);
 			nextPage = "/risposta.jsp";
@@ -46,4 +51,4 @@ public class LogInController extends HttpServlet {
 	}
 	}
 
-}
+

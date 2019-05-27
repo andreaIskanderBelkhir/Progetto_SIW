@@ -1,13 +1,13 @@
 package controller;
 
 public class AdminForm {
-private int id;
+private String id;
 private String password;
-public int getId() {
+public String getId() {
 	return id;
 }
-public void setId(int id) {
-	this.id = id;
+public void setId(String string) {
+	this.id = string;
 }
 public String getPassword() {
 	return password;

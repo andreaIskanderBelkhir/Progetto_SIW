@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Album {
 	private String nome;
-	private int id;
+	private String id;
 	private List<Foto> fotoLista;
 	public String getNome() {
 		return nome;
@@ -12,10 +12,10 @@ public class Album {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public List<Foto> getFotoLista() {

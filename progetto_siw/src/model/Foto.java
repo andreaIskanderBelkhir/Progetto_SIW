@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Foto {
 	private String nome;
-	private int id;
+	private String id;
 	private Fotografo fotografo;//1 a molti mono
 	private String localita;
 	private LocalDate data;
@@ -14,10 +14,10 @@ public class Foto {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public Fotografo getFotografo() {

@@ -5,7 +5,7 @@ import java.util.List;
 public class Fotografo {
 	private  String nome;
 	private String cognome;
-	private int id;
+	private String id;
 	private List<Album> album;//1 a molti mono
 	public String getNome() {
 		return nome;
@@ -19,10 +19,10 @@ public class Fotografo {
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
 	}
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public List<Album> getAlbum() {
