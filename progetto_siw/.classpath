@@ -8,5 +8,120 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/hibernate-entitymanager-5.4.1.Final.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/jstl-1.2.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/postgresql-42.2.5.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/standard-1.1.2.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/hibernate-release-5.4.1.Final/lib/required/txw2-2.3.1.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/hibernate-release-5.4.1.Final/lib/required/stax-ex-1.8.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/hibernate-release-5.4.1.Final/lib/required/jboss-transaction-api_1.2_spec-1.1.1.Final.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/hibernate-release-5.4.1.Final/lib/required/jboss-logging-3.3.2.Final.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/hibernate-release-5.4.1.Final/lib/required/jaxb-runtime-2.3.1.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/hibernate-release-5.4.1.Final/lib/required/jaxb-api-2.3.1.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/hibernate-release-5.4.1.Final/lib/required/javax.persistence-api-2.2.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/hibernate-release-5.4.1.Final/lib/required/javax.activation-api-1.2.0.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/hibernate-release-5.4.1.Final/lib/required/javassist-3.24.0-GA.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/hibernate-release-5.4.1.Final/lib/required/jandex-2.0.5.Final.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/hibernate-release-5.4.1.Final/lib/required/istack-commons-runtime-3.0.7.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/hibernate-release-5.4.1.Final/lib/required/hibernate-core-5.4.1.Final.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/hibernate-release-5.4.1.Final/lib/required/hibernate-commons-annotations-5.1.0.Final.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/hibernate-release-5.4.1.Final/lib/required/FastInfoset-1.2.15.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/hibernate-release-5.4.1.Final/lib/required/dom4j-2.1.1.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/hibernate-release-5.4.1.Final/lib/required/classmate-1.3.4.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/hibernate-release-5.4.1.Final/lib/required/byte-buddy-1.9.5.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/hibernate-release-5.4.1.Final/hibernate-release-5.4.1.Final/lib/required/antlr-2.7.7.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Gemelli/Tomcat/apache-tomcat-9.0.19/apache-tomcat-9.0.19/lib/servlet-api.jar">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
