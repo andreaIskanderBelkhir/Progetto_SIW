@@ -11,7 +11,8 @@
 <header><b>StockImages</b></header>
 <nav>
 <form action ="FormController" method="post">
-Cerca per autore<input type="text" name="autore" /><button type="submit">Invia</button></form></nav>
+Cerca per autore<input type="text" name="autore" /><button type="submit">Invia</button></form>
+</nav>
 <section>
 <c:forEach var="fotografo" items="${fotografo}">
 <div>Album: ${fotografo.album.nome} di ${fotografo.nome}</div>
@@ -23,6 +24,8 @@ Cerca per autore<input type="text" name="autore" /><button type="submit">Invia</
 </c:forEach>
 </section>
 <aside>Carrello:
-<ul><c:forEach var="foto" items="${carrello.foto}"><li>${foto.id}</li></c:forEach></ul></aside>
+<ul><c:forEach var="foto" items="${carrello.foto}"><li>${foto.id}</li></c:forEach></ul>
+<a href="Contratto.jsp"><button type="submit">Conferma</button></a>
+</aside>
 </body>
 </html>
