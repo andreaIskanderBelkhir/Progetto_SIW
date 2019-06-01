@@ -13,6 +13,16 @@
 <form action ="FormController" method="post">
 Cerca per autore<input type="text" name="autore" /><button type="submit">Invia</button></form></nav>
 <section>
+<c:forEach var="fotografo" items="${fotografo}">
+<div>Album: ${fotografo.album.nome} di ${fotografo.nome}</div>
+<ol>
+<c:forEach var="foto" items="${fotografo.album.foto}">
+<li><a href="selezionaFoto?id=${foto.id}"><img alt="${foto.id}" src="${foto}">></a></li>
+</c:forEach>
+</ol>
+</c:forEach>
 </section>
+<aside>Carrello:
+<ul><c:forEach var="foto" items="${carrello.foto}"><li>${foto.id}</li></c:forEach></ul></aside>
 </body>
 </html>
