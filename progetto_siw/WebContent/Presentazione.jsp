@@ -16,7 +16,7 @@
 			Cerca per autore<input type="text" name="autore" />
 			<button type="submit">Invia</button>
 		</form>
-	</nav>
+	</nav> 
 	<section>
 		<c:forEach var="fotografo" items="${fotografo}">
 			<div>Album: ${fotografo.album.nome} di ${fotografo.nome}</div>
