@@ -25,24 +25,15 @@ public class LogInController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//Lettura dei parametri
 
-<<<<<<< HEAD
 		HelperAdmin helperAdmin = new HelperAdmin();
-=======
-		HelperAdmin helperadmin = new HelperAdmin();
->>>>>>> refs/remotes/origin/master
+
 		AdminForm adminForm = new AdminForm();
 		HttpSession session = req.getSession();
 		//Gestione della risposta
 		String nextPage;
 
-<<<<<<< HEAD
 		if(helperAdmin.IsNotValid(req)) {
 			nextPage = "/ControlloAdmin.jsp";
-=======
-		if(helperadmin.IsNotValid(req)) {
-			nextPage = "/ControlloAdim.jsp";
-
->>>>>>> refs/remotes/origin/master
 		}
 		else {
 			adminForm.setId(req.getParameter("id"));
