@@ -24,7 +24,7 @@ public class HelperAdmin {
 			request.setAttribute("passwordErr", mess );  //Passo alla form il messaggio di errore
 			errore = true;
 		}
-		if(&&!errore)//TODO controlla se password è associata al id presente nella lista di admin nel server 
+		if(!errore)//TODO controlla se password è associata al id presente nella lista di admin nel server 
 			{
 			String mess="l'associazione id password e' errata";
 			request.setAttribute("idpasErr", mess);

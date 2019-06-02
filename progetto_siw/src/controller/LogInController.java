@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import model.Admin;
 import services.Adminservices;
 
-@WebServlet("/LogIn")
+@WebServlet("/LogInController")
 public class LogInController extends HttpServlet {
 	
 	/**
@@ -25,13 +25,13 @@ public class LogInController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//Lettura dei parametri
 
-		HelperAdmin helperstudente = new HelperAdmin();
+		HelperAdmin helperadmin = new HelperAdmin();
 		AdminForm adminForm = new AdminForm();
 		HttpSession session = req.getSession();
 		//Gestione della risposta
 		String nextPage;
 
-		if(helperstudente.IsNotValid(req)) {
+		if(helperadmin.IsNotValid(req)) {
 			nextPage = "/ControlloAdim.jsp";
 
 		}
