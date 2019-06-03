@@ -1,9 +1,17 @@
 package model;
 
+import java.util.List;
+
 public class Admin {
 	private String nome;
 	private int id;
 	private String password;
+	private List<Richiesta> richieste;
+
+	public List<Richiesta> getRichieste() {
+		return richieste;
+	}
+
 	public String getNome() {
 		return nome;
 	}
