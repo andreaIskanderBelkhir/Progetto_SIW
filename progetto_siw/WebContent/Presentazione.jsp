@@ -11,7 +11,7 @@
 <header><b>StockImages</b></header>
 <nav>
 <form action ="FormController" method="post">
-Cerca per autore<input type="text" name="autore" /><button type="submit">Invia</button></form>
+Cerca per fotografo<input type="text" name="autore" /><button type="submit">Invia</button></form>
 </nav>
 <section>
 <c:forEach var="fotografo" items="${fotografo}">
