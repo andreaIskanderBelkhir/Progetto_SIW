@@ -13,9 +13,9 @@ import javax.servlet.http.HttpSession;
 import model.Admin;
 import services.Adminservices;
 
-@WebServlet("/LogIn")
+@WebServlet("/LogInController")
 public class LogInController extends HttpServlet {
-	
+
 	/**
 	 * 
 	 */
@@ -25,30 +25,25 @@ public class LogInController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//Lettura dei parametri
 
-		HelperAdmin helperstudente = new HelperAdmin();
+		HelperAdmin helperAdmin = new HelperAdmin();
 		AdminForm adminForm = new AdminForm();
 		HttpSession session = req.getSession();
 		//Gestione della risposta
 		String nextPage;
 
-		if(helperstudente.IsNotValid(req)) {
-			nextPage = "/ControlloAdim.jsp";
-
+		if(helperAdmin.IsNotValid(req)) {
+			nextPage = "/ControlloAdmin.jsp";
 		}
 		else {
 			adminForm.setId(req.getParameter("id"));
 			adminForm.setPassword(req.getParameter("password"));
 			session.setAttribute("AdminForm", adminForm);
-			nextPage = "/risposta.jsp";
-
+			nextPage = "/HomeAdmin.jsp";
 		}
 		ServletContext application = getServletContext();
 		RequestDispatcher rd;
 		rd = application.getRequestDispatcher(nextPage);
 		rd.forward(req, resp);
 		return;
-
 	}
-	}
-
-
+}

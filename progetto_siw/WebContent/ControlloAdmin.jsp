@@ -10,23 +10,30 @@
 		<b>StockImages</b>
 	</h1>
 	<div>Inserisci le credenziali per entrare come Admin</div>
-	<form action="<% out.println(response.encodeURL("LogInController")); %>"
+	<form
+		action="<%out.println(response.encodeURL("LogInController"));%>"
 		method="get">
 		<div>
-			<%	out.println("id"); %>
+			<%
+				out.println("Id");
+			%>
 			<input type="text" name="id" value="${param.id}" /> <span
 				class="error"> ${idErr} </span>
 		</div>
 		<div>
-			<% out.println("password"); %>
-			<input type="text" name="password" value="${param.paswword}" /> <span
+			<%
+				out.println("Password"); 
+			%>
+			<input type="password" name="password" value="${param.password}" /> <!--Per togliere pass sbagliata togliere value--> <span
 				class="error"> ${passwordErr} </span>
 		</div>
-		<span> class="error"> ${IdpasErr} </span>
 		<div>
+			<span class="error"> ${idpasErr} </span>
 		</div>
 		<button type="submit">
-			<% out.println("Invia"); %>
+			<%
+				out.println("Invia");
+			%>
 		</button>
 	</form>
 </body>
