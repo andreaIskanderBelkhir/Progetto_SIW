@@ -9,14 +9,6 @@
 </head>
 <body>
 <header><b>StockImages</b></header>
-<nav>
-<form action ="FormController" method="post">
-<div>Cerca per fotografo<input type="text" name="autore" /></div>
-<div>Cerca una foto<input type="text" name="foto" /></div>
-<div>Cerca un album<input type="text" name="album" /></div>
-<div><span class="error">${ricercaErr}</span></div>
-<div><button type="submit">Invia</button></div></form>
-</nav>
 <section>
 <c:forEach var="fotografo" items="${fotografo}">
 <div>Album: ${fotografo.album.nome} di ${fotografo.nome}</div>
@@ -27,9 +19,20 @@
 </ol>
 </c:forEach>
 </section>
-<aside>Carrello:
+<aside>
+<form action ="FormController" method="post">
+<div>Cerca per fotografo<input type="text" name="autore" /></div>
+<div>Cerca una foto<input type="text" name="foto" /></div>
+<div>Cerca un album<input type="text" name="album" /></div>
+<div><span class="error">${ricercaErr}</span></div>
+<div><button type="submit">Invia</button></div></form></aside>
+<aside>
+<div>Carrello:</div>
 <ul><c:forEach var="foto" items="${carrello.foto}"><li>${foto.id}</li></c:forEach></ul>
-<a href="Contratto.jsp"><button type="submit">Conferma</button></a>
+<a href="RichiestaContratto.jsp"><button type="submit">Conferma</button></a>
 </aside>
+<footer>
+Autori: Andrea Belkir / Omar Moh'd / Giacomo Bellini
+</footer>
 </body>
 </html>
