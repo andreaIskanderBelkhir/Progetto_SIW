@@ -1,9 +1,11 @@
 package it.progetto.model;
 
 public class Admin {
+	
 	private String nome;
 	private long id;
 	private String password;
+	
 	public String getNome() {
 		return nome;
 	}

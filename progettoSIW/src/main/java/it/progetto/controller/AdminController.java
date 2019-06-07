@@ -17,26 +17,26 @@ import it.progetto.services.AdminValidator;
 
 @Controller
 public class AdminController {
-@Autowired
-private AdminService adminservice;
-@Autowired
-private AdminValidator adminvalidator;
 
-@RequestMapping(value="/admin",method= RequestMethod.POST)
-public String logIn(@Valid @ModelAttribute("admin")Admin admin,
-Model model,BindingResult bindingresult) {
-	this.adminvalidator.validate(admin,bindingresult);
-	if(!bindingresult.hasErrors()) {
-		if(this.adminservice.check(admin)) {
-		return "paginaAdmin.html";}
-		else {
-			ObjectError error= new ObjectError("idpsw","required");
-			bindingresult.addError(error);
-			return"AdminForm";
+	@Autowired
+	private AdminService adminService;
+	@Autowired
+	private AdminValidator adminValidator;
+
+	@RequestMapping(value="/admin",method= RequestMethod.POST)
+	public String logIn(@Valid @ModelAttribute("admin") Admin admin,
+			Model model,BindingResult bindingResult) {
+		this.adminValidator.validate(admin,bindingResult);
+		if(!bindingResult.hasErrors()) {
+			if(this.adminService.check(admin)) {
+				return "paginaAdmin.html";}
+			else {
+				ObjectError error= new ObjectError("idpsw","required");
+				bindingResult.addError(error);
+				return"AdminForm";
+			}
 		}
+		else
+			return "AdminForm";
 	}
-		
-	else
-		return "AdminForm";
-}
 }

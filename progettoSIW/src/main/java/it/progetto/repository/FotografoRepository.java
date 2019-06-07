@@ -6,7 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import it.progetto.model.Fotografo;
 
-
 public interface FotografoRepository extends CrudRepository<Fotografo, Long>{
 	
 	//findByDatiDaRecuperare(sarebbero le variabili)

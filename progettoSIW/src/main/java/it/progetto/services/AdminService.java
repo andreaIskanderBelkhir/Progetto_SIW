@@ -10,11 +10,12 @@ import it.progetto.repository.AdminRepository;
 
 @Service
 public class AdminService {
+	
 	@Autowired
-	private AdminRepository adminrepository;
+	private AdminRepository adminRepository;
 
 	public boolean check(Admin admin) {
-		Admin admin2 = this.adminrepository.findById(admin.getId()).get();
+		Admin admin2 = this.adminRepository.findById(admin.getId()).get();
 		if(admin.getPassword().equals(admin2.getPassword())) {
 			return true;
 		}

@@ -9,11 +9,15 @@ import javax.persistence.Id;
 
 @Entity
 public class Album {
+
 	private String nome;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+
 	private List<Foto> fotoLista;
+
 	public String getNome() {
 		return nome;
 	}

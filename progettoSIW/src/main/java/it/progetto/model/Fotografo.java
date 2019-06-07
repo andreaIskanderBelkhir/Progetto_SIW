@@ -6,14 +6,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 @Entity
 public class Fotografo {
+
 	private  String nome;
 	private String cognome;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+
 	private List<Album> album;//1 a molti mono
+
 	public String getNome() {
 		return nome;
 	}
