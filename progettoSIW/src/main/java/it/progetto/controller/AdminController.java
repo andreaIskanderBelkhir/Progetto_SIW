@@ -33,10 +33,10 @@ public class AdminController {
 			else {
 				ObjectError error= new ObjectError("idpsw","required");
 				bindingResult.addError(error);
-				return"AdminForm";
+				return "adminForm.html";
 			}
 		}
 		else
-			return "AdminForm";
+			return "adminForm.html";
 	}
 }

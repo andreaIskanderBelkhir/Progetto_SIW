@@ -3,6 +3,8 @@ package it.progetto.model;
 public class Admin {
 	
 	private String nome;
+	private String cognome;
+	private String username;
 	private long id;
 	private String password;
 	
@@ -11,6 +13,18 @@ public class Admin {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	public String getCognome() {
+		return cognome;
+	}
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public long getId() {
 		return id;
