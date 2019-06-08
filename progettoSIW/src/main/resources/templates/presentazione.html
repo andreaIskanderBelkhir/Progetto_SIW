@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html" lang="it">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+	<header>
+		<b>StockImages</b>
+	</header>
+	<section>
+		<th:block th:each="fotografo : ${fotografo}">
+			<div>
+				Album:<span th:text="${fotografo.album.nome}">qui ci va il
+					nome dell'album del fotografo</span> &emsp; Fotografo:<span
+					th:text="${fotografo.nome}">qui ci va il nome del fotografo</span>
+			</div>
+			<table>
+				<tr>
+					<th:block th:each="foto : ${fotografo.album.foto}">
+						<td><a th:href="selezionaFoto?id=${foto.id}"><img
+								alt="${foto.id}" src="${foto}">></a></td>
+				</tr>
+			</table>
+	</section>
+	<aside>
+		<form th:action="@{/fotografo}" method="POST"
+			th:object="${fotografo}">
+			<div>
+				Cerca per fotografo<input type="text" th:field="*{fotografo}" />
+			</div>
+		</form>
+		<form th:action="@{/foto}" method="POST" th:object="${foto}">
+			<div>
+				Cerca una foto<input type="text" th:object="*{foto}" />
+			</div>
+		</form>
+		<form th:action="@{/album}" method="POST"
+			th:object="${album}">
+			<div>
+				Cerca un album<input type="text" th:object="*{album}" />
+			</div>
+			<div>
+				<button type="submit">Invia</button>
+			</div>
+		</form>
+	</aside>
+	<aside>
+		<div>Carrello:</div>
+		<ul>
+			<th:each var="foto" items="${carrello.foto}">
+				<li>${foto.id}</li>
+		</ul>
+		<a href="richiestaContratto.jsp"><button type="submit">Conferma</button></a>
+	</aside>
+</body>
+</html>
