@@ -29,17 +29,20 @@
 			th:object="${fotografo}">
 			<div>
 				Cerca per fotografo<input type="text" th:field="*{fotografo}" />
+				&ensp;<span th:if="err: ${#fields.hasError('fotografo')}" th:errors="*{fotografo}"></span>
 			</div>
 		</form>
 		<form th:action="@{/foto}" method="POST" th:object="${foto}">
 			<div>
 				Cerca una foto<input type="text" th:object="*{foto}" />
+				&ensp;<span th:if="err: ${#fields.hasError('foto')}" th:errors="*{foto}"></span>
 			</div>
 		</form>
 		<form th:action="@{/album}" method="POST"
 			th:object="${album}">
 			<div>
 				Cerca un album<input type="text" th:object="*{album}" />
+				&ensp;<span th:if="err: ${#fields.hasError('album')}" th:errors="*{album}"></span>
 			</div>
 			<div>
 				<button type="submit">Invia</button>
@@ -52,7 +55,7 @@
 			<th:block th:each= "foto : ${carrello.foto}">
 				<li th:text="${foto}"></li>
 		</ul>
-		<a th:href="richiestaContratto.jsp"><button type="submit">Conferma</button></a>
+		<a th:href="richiestaContratto.html"><button type="submit">Conferma</button></a>
 	</aside>
 </body>
 </html>
