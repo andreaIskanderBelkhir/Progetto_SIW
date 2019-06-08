@@ -19,7 +19,7 @@
 			<table>
 				<tr>
 					<th:block th:each="foto : ${fotografo.album.foto}">
-						<td><a th:href="selezionaFoto?id=${foto.id}"><img
+						<td><a th:href="@{'/foto' + '/' + ${foto.id}}"><img
 								alt="${foto.id}" src="${foto}">></a></td>
 				</tr>
 			</table>
@@ -49,8 +49,8 @@
 	<aside>
 		<div>Carrello:</div>
 		<ul>
-			<th:each var="foto" items="${carrello.foto}">
-				<li>${foto.id}</li>
+			<th:block th:each= "foto : ${carrello.foto}">
+				<li th:text="${foto}"></li>
 		</ul>
 		<a href="richiestaContratto.jsp"><button type="submit">Conferma</button></a>
 	</aside>
