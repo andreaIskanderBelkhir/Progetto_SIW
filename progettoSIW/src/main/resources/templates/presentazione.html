@@ -52,7 +52,7 @@
 			<th:block th:each= "foto : ${carrello.foto}">
 				<li th:text="${foto}"></li>
 		</ul>
-		<a href="richiestaContratto.jsp"><button type="submit">Conferma</button></a>
+		<a th:href="richiestaContratto.jsp"><button type="submit">Conferma</button></a>
 	</aside>
 </body>
 </html>
