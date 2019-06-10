@@ -1,12 +1,26 @@
 package it.progetto.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Admin {
 	
+	public Admin(String username, String password,String role) {
+		this.username = username;
+		this.password = password;
+		this.role=role;
+	}
 	private String nome;
 	private String cognome;
 	private String username;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String password;
+	private String role;
 	
 	public String getNome() {
 		return nome;
