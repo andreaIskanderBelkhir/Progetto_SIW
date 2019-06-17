@@ -49,7 +49,7 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 	                    // logout is performed when sending a GET to "/logout"
 	                    .logoutUrl("/logout")
 	                    // after logout is successful, redirect to / page (home)
-	                    .logoutSuccessUrl("/index");
+	                    .logoutSuccessUrl("/");
 	    }
 	    @Bean
 	    DataSource buildDatasource() {
