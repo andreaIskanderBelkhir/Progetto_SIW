@@ -18,7 +18,7 @@ public class Foto {
 	private Fotografo fotografo;//1 a molti mono
 	private String localita;
 	private LocalDate data;
-
+	private String url;
 	public String getNome() {
 		return nome;
 	}
