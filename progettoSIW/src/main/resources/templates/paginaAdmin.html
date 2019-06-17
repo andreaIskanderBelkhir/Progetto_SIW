@@ -5,12 +5,22 @@
 	<div>
 		<h4>Dati Admin</h4>
 		<div>
-		Nome: <span th:text="${admin.nome}">fulvio</span>
+			Username: <span th:text="${username}">fulvio</span>
 		</div>
 		<div>
-		Cognome: <span th:text="${admin.cognome}">speranza</span>
-		</div>
-	</div>
-
+			<table>
+				<tr>
+					<td href="/addFoto.html">Vuoi aggiungere una Foto?</td>
+				</tr>
+				<tr>
+					<td href="/addFotografo.html">Vuoi aggiungere un Fotografo?</td>
+				</tr>
+				<tr>
+					<td href="/addAlbum">Vuoi aggiungere un Album?</td>
+				</tr>
+			</table>
+			<h5>
+				<a href="/logout">Logout</a>
+			</h5>
 </body>
 </html>
