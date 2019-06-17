@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Foto {
@@ -14,7 +16,8 @@ public class Foto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-
+	@OneToMany
+	@JoinColumn(name = "foto_id")
 	private Fotografo fotografo;//1 a molti mono
 	private String localita;
 	private LocalDate data;
@@ -27,9 +30,6 @@ public class Foto {
 	}
 	public long getId() {
 		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
 	}
 	public Fotografo getFotografo() {
 		return fotografo;

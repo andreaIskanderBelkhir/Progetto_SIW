@@ -13,19 +13,19 @@
 	<form th:action="@{/richiesta}" method="POST" th:object="${richiesta}">
 		<div>
 			Nome :<input type="text" th:field="*{nomeRichiedente}" /> <span
-				th:if="err: ${#fields.hasError('nomeRichiedente')}"
+				th:if="${#fields.hasError('nomeRichiedente')}"
 				th:errors="*{nomeRichiedente}"> qui ci va l'errore sul nome
 				se vuoto o incorretto</span>
 		</div>
 		<div>
 			Cognome : <input type="text" th:field="*{cognomeRichiedente}" /> <span
-				th:if="err: ${#fields.hasError('cognomeRichiedente')}"
+				th:if="${#fields.hasError('cognomeRichiedente')}"
 				th:errors="*{cognomeRichiedente}"> qui ci va l'errore sul
 				cognome se vuoto o incorretto</span>
 		</div>
 		<div>
 			Data di nascita : <input type="date" th:field="*{dataDiNascita}">
-			<span th:if="err: ${#fields.hasError('dataDiNascita')}"
+			<span th:if="${#fields.hasError('dataDiNascita')}"
 				th:errors="*{dataDiNascita}"> qui ci va l'errore sulla data
 				di nascita se vuota o incorretta</span>
 		</div>

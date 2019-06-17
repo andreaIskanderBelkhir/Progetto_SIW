@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Fotografo {
@@ -16,7 +18,8 @@ public class Fotografo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-
+	@OneToMany
+	@JoinColumn(name = "fotografo_id")
 	private List<Album> album;//1 a molti mono
 
 	public String getNome() {
@@ -33,9 +36,6 @@ public class Fotografo {
 	}
 	public long getId() {
 		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
 	}
 	public List<Album> getAlbum() {
 		return album;

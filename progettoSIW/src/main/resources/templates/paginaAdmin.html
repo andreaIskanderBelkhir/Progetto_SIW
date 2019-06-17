@@ -2,25 +2,25 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns="http://www.w3.org/1999/html">
 <body>
+	<h4>Dati Admin</h4>
 	<div>
-		<h4>Dati Admin</h4>
-		<div>
-			Username: <span th:text="${username}">fulvio</span>
-		</div>
-		<div>
-			<table>
-				<tr>
-					<td href="/addFoto.html">Vuoi aggiungere una Foto?</td>
-				</tr>
-				<tr>
-					<td href="/addFotografo.html">Vuoi aggiungere un Fotografo?</td>
-				</tr>
-				<tr>
-					<td href="/addAlbum">Vuoi aggiungere un Album?</td>
-				</tr>
-			</table>
-			<h5>
-				<a href="/logout">Logout</a>
-			</h5>
+		Username: <span th:text="${username}">fulvio</span>
+	</div>
+	<div>
+		<table>
+			<tr>
+				<td th:href="/addFoto.html">Vuoi aggiungere una Foto?</td>
+			</tr>
+			<tr>
+				<td th:href="/addFotografo.html">Vuoi aggiungere un Fotografo?</td>
+			</tr>
+			<tr>
+				<td th:href="/addAlbum">Vuoi aggiungere un Album?</td>
+			</tr>
+		</table>
+	</div>
+	<h5>
+		<a th:href="/logout">Logout</a>
+	</h5>
 </body>
 </html>

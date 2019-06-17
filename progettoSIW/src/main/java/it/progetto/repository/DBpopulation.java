@@ -12,7 +12,6 @@ public class DBpopulation implements ApplicationRunner {
 	private AdminRepository admrep;
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		// TODO Auto-generated method stub
 		this.deleteAll();
 		this.addAll();
 
