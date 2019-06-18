@@ -10,6 +10,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
@@ -65,6 +66,11 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 	        auth.jdbcAuthentication().dataSource(this.buildDatasource())
 	                .authoritiesByUsernameQuery("SELECT username, role FROM users WHERE username=?")
 	                .usersByUsernameQuery("SELECT username, password, 1 as enabled FROM users WHERE username=?");
+	    }
+	    @Override //elimina tutte le funzioni di sicurezza per quel path
+	    public void configure(WebSecurity web) throws Exception {
+	         web.ignoring()
+	            .antMatchers("src/main/resources/**");
 	    }
 
 }

@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Admin {
-	
+
 	public Admin(String username, String password,String role) {
 		this.username = username;
 		this.password = password;
@@ -28,7 +28,19 @@ public class Admin {
 	@OneToMany
 	@JoinColumn(name = "admin_id")
 	private List<Richiesta> richieste;
-	
+
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	public List<Richiesta> getRichieste() {
+		return richieste;
+	}
+	public void setRichieste(List<Richiesta> richieste) {
+		this.richieste = richieste;
+	}
 	public String getNome() {
 		return nome;
 	}

@@ -20,4 +20,9 @@ public class RichiestaServices {
 	public List<Richiesta> trovaPerNomeAndCognome(String nome , String cognome){
 		return this.richiestaRepository.findByNomeAndCognome(nome, cognome);
 	}
+	
+	@Transactional
+	public List<Richiesta> tutti(){
+		return (List<Richiesta>) richiestaRepository.findAll();
+	}
 }
