@@ -12,17 +12,17 @@ import javax.persistence.OneToMany;
 @Entity
 public class Admin {
 
-	public Admin(String username, String password,String role) {
+	public Admin(Long id, String username, String password,String role) {
+		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.role=role;
 	}
-	private String nome;
-	private String cognome;
-	private String username;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+	private String username;
 	private String password;
 	private String role;
 	@OneToMany
@@ -40,18 +40,6 @@ public class Admin {
 	}
 	public void setRichieste(List<Richiesta> richieste) {
 		this.richieste = richieste;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getCognome() {
-		return cognome;
-	}
-	public void setCognome(String cognome) {
-		this.cognome = cognome;
 	}
 	public String getUsername() {
 		return username;

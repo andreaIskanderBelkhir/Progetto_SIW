@@ -16,8 +16,6 @@ import it.progetto.model.Richiesta;
 import it.progetto.repository.RichiestaRepository;
 import it.progetto.services.RichiestaValidator;
 
-
-
 @Controller
 public class MainController {
 	
