@@ -11,13 +11,6 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Admin {
-
-	public Admin(Long id, String username, String password,String role) {
-		this.id = id;
-		this.username = username;
-		this.password = password;
-		this.role=role;
-	}
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,6 +21,13 @@ public class Admin {
 	@OneToMany
 	@JoinColumn(name = "admin_id")
 	private List<Richiesta> richieste;
+	
+	public Admin(Long id, String username, String password,String role) {
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.role=role;
+	}
 
 	public String getRole() {
 		return role;
