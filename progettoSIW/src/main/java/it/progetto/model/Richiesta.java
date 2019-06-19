@@ -1,11 +1,14 @@
 package it.progetto.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Richiesta {
@@ -16,8 +19,17 @@ public class Richiesta {
 	private String nomeRichiedente;
 	private String cognomeRichiedente;
 	private LocalDate dataDiNascita;
+	@OneToMany
+	@JoinColumn(name = "richiesta_id")
+	List<Foto> fotografie;
 	
 	
+	public List<Foto> getFotografie() {
+		return fotografie;
+	}
+	public void setFotografie(List<Foto> fotografie) {
+		this.fotografie = fotografie;
+	}
 	public Long getId() {
 		return id;
 	}
