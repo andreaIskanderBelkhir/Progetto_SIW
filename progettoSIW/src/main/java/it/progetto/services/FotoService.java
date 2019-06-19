@@ -23,7 +23,13 @@ public class FotoService {
 		return (List<Foto>) foto.findAll();
 	}
 
-	public Foto studentePerId(Long id) {
+	@Transactional
+	public Foto fotoPerId(Long id) {
 		return this.foto.findById(id).get();
+	}
+	
+	@Transactional
+	public Foto fotoPerNome(String nome) {
+		return this.foto.findByNome(nome);
 	}
 }

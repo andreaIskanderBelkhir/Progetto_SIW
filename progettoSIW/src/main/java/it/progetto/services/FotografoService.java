@@ -28,4 +28,9 @@ public class FotografoService {
 	public Fotografo fotografoPerId(Long id) {
 		return this.fotografo.findById(id).get();
 	}
+	
+	@Transactional
+	public Fotografo fotografoPerNomeEcognome(String nome,String cognome) {
+		return this.fotografo.findByNomeAndCognome(nome,cognome);
+	}
 }

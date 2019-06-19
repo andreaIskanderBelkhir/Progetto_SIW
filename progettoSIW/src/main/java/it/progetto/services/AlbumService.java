@@ -8,12 +8,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import it.progetto.model.Album;
 import it.progetto.repository.AlbumRepository;
-import it.progetto.repository.FotoRepository;
 
 @Service
 public class AlbumService {
-	@Autowired 
-	private FotoRepository foto;
+	
 	@Autowired
 	private AlbumRepository album;
 	@Transactional 
@@ -26,7 +24,13 @@ public class AlbumService {
 		return (List<Album>) album.findAll();
 	}
 
+	@Transactional
 	public Album albumPerId(Long id) {
 		return this.album.findById(id).get();
+	}
+	
+	@Transactional
+	public Album albumPerNome(String nome) {
+		return this.album.findByNome(nome);
 	}
 }

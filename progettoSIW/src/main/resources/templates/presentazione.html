@@ -5,45 +5,49 @@
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="assets/css/main.css" />
 </head>
-<title>Presentazione</title>
 <body>
 	<header>
 		<b>StockImages</b>
 	</header>
 	<section>
-		<th:block th:each="fotografo : ${fotografo}">
-			<div>
-				Album:<span th:text="${fotografo.album.nome}">qui ci va il
-					nome dell'album del fotografo</span> &emsp; Fotografo:<span
-					th:text="${fotografo.nome}">qui ci va il nome del fotografo</span>
-			</div>
 			<table>
 				<tr>
-					<th:block th:each="foto : ${fotografo.album.foto}">
+					<th:block th:each="foto : ${foto}">
 						<td><a th:href="@{'/foto' + '/' + ${foto.id}}"><img
-								alt="${foto.id}" src="${foto}">></a></td>
+								alt="${foto.id}" src="${foto}">></a>Aggiungi al carrello</td>
 				</tr>
 			</table>
 	</section>
 	<aside>
-		<form th:action="@{/fotografo}" method="POST"
+		<form th:action="@{/fotografoVisualizza}" method="POST"
 			th:object="${fotografo}">
+			<div>Cerca un fotografo</div>
 			<div>
-				Cerca per fotografo<input type="text" th:field="*{fotografo}" />
-				&ensp;<span th:if="err: ${#fields.hasError('fotografo')}" th:errors="*{fotografo}"></span>
+				&ensp; Nome:<input type="text" th:field="*{nome}" /> &ensp;<span
+					th:if="${#fields.hasError('nome')}" th:errors="*{nome}"></span>
+			</div>
+			<div>
+				Cognome:<input type="text" th:field="*{cognome}" /> &ensp;<span
+					th:if="${#fields.hasError('cognome')}" th:errors="*{cognome}"></span>
+			</div>
+			<div>
+				<button type="submit">Invia</button>
 			</div>
 		</form>
-		<form th:action="@{/foto}" method="POST" th:object="${foto}">
+		<form th:action="@{/fotoVisualizza}" method="POST" th:object="${foto}">
 			<div>
-				Cerca una foto<input type="text" th:object="*{foto}" />
-				&ensp;<span th:if="err: ${#fields.hasError('foto')}" th:errors="*{foto}"></span>
+				Cerca una foto<input type="text" th:object="*{nome}" /> &ensp;<span
+					th:if="${#fields.hasError('nome')}" th:errors="*{nome}"></span>
+			</div>
+			<div>
+				<button type="submit">Invia</button>
 			</div>
 		</form>
-		<form th:action="@{/album}" method="POST"
+		<form th:action="@{/albumVisualizza}" method="POST"
 			th:object="${album}">
 			<div>
-				Cerca un album<input type="text" th:object="*{album}" />
-				&ensp;<span th:if="err: ${#fields.hasError('album')}" th:errors="*{album}"></span>
+				Cerca un album<input type="text" th:object="*{nome}" /> &ensp;<span
+					th:if="${#fields.hasError('nome')}" th:errors="*{nome}"></span>
 			</div>
 			<div>
 				<button type="submit">Invia</button>
@@ -53,10 +57,10 @@
 	<aside>
 		<div>Carrello:</div>
 		<ul>
-			<th:block th:each= "foto : ${carrello.foto}">
+			<th:block th:each="foto : ${carrello.foto}">
 				<li th:text="${foto}"></li>
 		</ul>
-		<a th:href="richiestaContratto.html"><button type="submit">Conferma</button></a>
+		<a href="richiestaContratto.html"><button type="submit">Conferma</button></a>
 	</aside>
 </body>
 </html>
