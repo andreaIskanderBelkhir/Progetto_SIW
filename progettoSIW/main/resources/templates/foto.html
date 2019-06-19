@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+	<h1>StockImaegs</h1>
+	<header>
+		<div>Ecco le informazioni riguardo la foto richiesta</div>
+	</header>
+	<section>
+		<div>
+			Autore: <span th:text="${foto.fotografo}">qui ci va il nome
+				del'autore della foto</span>
+		</div>
+		<div>
+			Località: <span th:text="${foto.localita}">qui ci va la
+				località della foto</span>
+		</div>
+		<div>
+			Data: <span th:text="${foto.data}">qui ci va la data di scatto</span>
+		</div>
+	</section>
+</body>
+</html>

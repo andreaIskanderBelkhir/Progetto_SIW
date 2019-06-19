@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<body>
+	<div>
+		<h4>Inserisci i dati del fotografo</h4>
+	</div>
+	<form th:action="/fotografo" method="POST">
+		<table>
+			<tr>
+				<td>Nome:</td>
+				<td><input type="text" th:field="*{url}" /></td>
+			</tr>
+			<tr>
+				<td>Cognome:</td>
+				<td><input type="text" th:field="*{url}" /></td>
+			</tr>
+			<tr>
+				<td>
+					<button type="submit">Invio</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
+<!--  -->

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+	<h1>StockImaegs</h1>
+	<header>
+		<div>Ecco le informazioni riguardo il fotografo richiesto</div>
+	</header>
+	<section>
+		<div>
+			Nome: <span th:text="${fotografo.nome}">qui ci va il nome del
+				fotografo</span>
+		</div>
+		<div>
+			Cognome: <span th:text="${fotografo.cognome}">qui ci va il
+				cognome del fotografo</span>
+		</div>
+		<div>
+			<ul>
+				<th:block th:each="album :  {fotografo.album}">
+					<li th:text="${album}"></li>
+			</ul>
+		</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html" lang="it">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+	<h1>
+		<b>StockImages</b>
+	</h1>
+	<h2>Form di richiesta licenza royalty-free</h2>
+	<form th:action="@{/richiesta}" method="POST" th:object="${richiesta}">
+		<div>
+			Nome :<input type="text" th:field="*{nomeRichiedente}" /> <span
+				th:if="${#fields.hasError('nomeRichiedente')}"
+				th:errors="*{nomeRichiedente}"> qui ci va l'errore sul nome
+				se vuoto o incorretto</span>
+		</div>
+		<div>
+			Cognome : <input type="text" th:field="*{cognomeRichiedente}" /> <span
+				th:if="${#fields.hasError('cognomeRichiedente')}"
+				th:errors="*{cognomeRichiedente}"> qui ci va l'errore sul
+				cognome se vuoto o incorretto</span>
+		</div>
+		<div>
+			Data di nascita : <input type="date" th:field="*{dataDiNascita}">
+			<span th:if="${#fields.hasError('dataDiNascita')}"
+				th:errors="*{dataDiNascita}"> qui ci va l'errore sulla data
+				di nascita se vuota o incorretta</span>
+		</div>
+		<div>
+			<button type="submit">Invia</button>
+		</div>
+	</form>
+</body>
+</html>

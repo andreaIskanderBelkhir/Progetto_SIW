@@ -4,11 +4,12 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import it.progetto.model.Admin;
+import it.progetto.model.Album;
 
-public interface AdminRepository extends CrudRepository<Admin, Long>{
+public interface AlbumRepository extends CrudRepository<Album, Long>{
 	
 	//findByDatiDaRecuperare(sarebbero le variabili)
-	public List<Admin> findByIdAndPassword(long id, String password);
+	public List<Album> findByNome(String nome);
+
 
 }
