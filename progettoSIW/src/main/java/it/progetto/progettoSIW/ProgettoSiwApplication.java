@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import it.progetto.model.Admin;
 import it.progetto.repository.AdminRepository;
@@ -33,9 +32,7 @@ public class ProgettoSiwApplication {
 
         System.out.println("Storing users...");
 
-        Admin admin = new Admin(1L, "admin", null, "ADMIN");
-        String adminPassword = new BCryptPasswordEncoder().encode("admin");
-        admin.setPassword(adminPassword);
+        Admin admin = new Admin(1L, "admin","admin", "ADMIN");
         admin = this.adminR.save(admin);
 
         System.out.println("Done.\n");

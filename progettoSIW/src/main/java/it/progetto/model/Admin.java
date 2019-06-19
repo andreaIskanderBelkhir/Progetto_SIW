@@ -25,9 +25,6 @@ public class Admin {
 	@OneToMany
 	@JoinColumn(name = "admin_id")
 	private List<Richiesta> richieste;
-	
-	public Admin() {};
-	
 	public Admin(Long id, String username, String password,String role) {
 		this.id = id;
 		this.username = username;
