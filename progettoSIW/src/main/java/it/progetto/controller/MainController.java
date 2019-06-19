@@ -8,9 +8,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import it.progetto.model.Richiesta;
 import it.progetto.repository.RichiestaRepository;
@@ -29,23 +29,25 @@ public class MainController {
 	public MainController() {
 		super();
 	}
-	@RequestMapping(value = { "/", "/index" }, method = RequestMethod.GET)
+	@GetMapping("/")
+	@PostMapping("/")
 	public String index(Model model) {
-		return "home";
+		return "home.html";
 	}
 
 
-	@RequestMapping(value = { "/admin" }, method = RequestMethod.GET)
+	@GetMapping("/paginaAdmin")
+	@PostMapping("/paginaAdmin")
 	public String admin(Model model) {
 		UserDetails details = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		String role = details.getAuthorities().iterator().next().getAuthority();    // get first authority
 		model.addAttribute("username", details.getUsername());
 		model.addAttribute("role", role);
 
-		return "paginaAdmin";
+		return "paginaAdmin.html";
 	}
 
-	@RequestMapping(value = {"/richiesta"}, method = RequestMethod.GET)
+	@GetMapping("/richiesta")
 	public String richiestaContratto(@Valid @ModelAttribute("Richiesta") Richiesta richiesta,Model model,
 			BindingResult bindingResult) {
 		this.richiestaValidator.validate(richiesta, bindingResult);
@@ -54,7 +56,7 @@ public class MainController {
 			return "richiestaInviata";
 		}
 		else {
-			return "richiestaContratto";
+			return "richiestaContratto.html";
 		}
 	}
 }

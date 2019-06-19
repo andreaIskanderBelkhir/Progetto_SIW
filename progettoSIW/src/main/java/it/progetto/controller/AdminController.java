@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import it.progetto.model.Album;
 import it.progetto.model.Foto;
@@ -26,19 +26,19 @@ public class AdminController {
 	@Autowired
 	private AlbumService albumservice;
 	
-	@RequestMapping(value = "/foto", method = RequestMethod.POST)
+	@PostMapping("/foto")
 	public String newFoto(@Valid @ModelAttribute("Foto") Foto foto,
 			Model model, BindingResult bindingResult) {
 		this.fotoService.inserisci(foto);
 		return "paginaAdmin.html";
 	}
-	@RequestMapping(value = "/album", method = RequestMethod.POST)
+	@PostMapping("/album")
 	public String newAlbum(@Valid @ModelAttribute("Album") Album album,
 			Model model, BindingResult bindingResult) {
 		this.albumservice.inserisci(album);
 		return "paginaAdmin.html";
 	}
-	@RequestMapping(value = "/fotografo", method = RequestMethod.POST)
+	@PostMapping("/fotografo")
 	public String newFotografo(@Valid @ModelAttribute("Fotografo") Fotografo fotografo,
 			Model model, BindingResult bindingResult) {
 		this.fotografoservice.inserisci(fotografo);

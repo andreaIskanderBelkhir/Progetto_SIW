@@ -6,7 +6,7 @@
 	<div>
 		<h4>Inserisci i dati del album</h4>
 	</div>
-	<form th:action="/album" method="POST">
+	<form th:action="@{/album}" method="POST" th:object="${album}">
 		<table>
 			<tr>
 				<td>Nome:</td>
