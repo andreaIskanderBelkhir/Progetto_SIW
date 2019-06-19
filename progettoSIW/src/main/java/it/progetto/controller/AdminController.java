@@ -25,7 +25,7 @@ public class AdminController {
 	private FotografoService fotografoservice;
 	@Autowired
 	private AlbumService albumservice;
-
+	
 	@RequestMapping(value = "/foto", method = RequestMethod.POST)
 	public String newFoto(@Valid @ModelAttribute("Foto") Foto foto,
 			Model model, BindingResult bindingResult) {
