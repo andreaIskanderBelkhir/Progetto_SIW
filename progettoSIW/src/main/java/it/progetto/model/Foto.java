@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Foto {
@@ -16,7 +16,7 @@ public class Foto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	@OneToMany
+	@OneToOne
 	@JoinColumn(name = "foto_id")
 	private Fotografo fotografo;//1 a molti mono
 	private String localita;
