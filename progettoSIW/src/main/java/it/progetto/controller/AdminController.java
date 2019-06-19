@@ -37,7 +37,7 @@ public class AdminController {
 	public String controllaCredenziali(@Valid @ModelAttribute("admin") Admin admin, Model model, BindingResult bindingResult) {
 		this.adminvalidator.validate(admin, bindingResult);
 		if(!bindingResult.hasErrors()) {
-			Admin adminNelDB = this.adminrepository.adminByUsername(admin.getUsername());
+			Admin adminNelDB = this.adminrepository.findByUsername(admin.getUsername());
 			if((adminNelDB!=null)&&(admin.checkPassword(adminNelDB))) {
 				return "paginaAdmin";
 			}	

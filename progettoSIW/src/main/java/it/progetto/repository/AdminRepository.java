@@ -14,7 +14,7 @@ public interface AdminRepository extends CrudRepository<Admin, Long>{
 	//findByDatiDaRecuperare(sarebbero le variabili)
 	public List<Admin> findByIdAndPassword(long id, String password);
 
-	public Admin adminByUsername(String username);
+	public Admin findByUsername(String username);
 
 
 }
