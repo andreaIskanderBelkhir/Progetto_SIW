@@ -12,6 +12,10 @@ import javax.persistence.OneToMany;
 @Entity
 public class Admin {
 	
+	public Admin() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
@@ -21,9 +25,6 @@ public class Admin {
 	@OneToMany
 	@JoinColumn(name = "admin_id")
 	private List<Richiesta> richieste;
-	
-	public Admin() {};
-	
 	public Admin(Long id, String username, String password,String role) {
 		this.id = id;
 		this.username = username;
@@ -57,5 +58,9 @@ public class Admin {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public boolean checkPassword(Admin adminNelDB) {
+		// TODO Auto-generated method stub
+		return this.password.equals(adminNelDB.getPassword());
 	}
 }
