@@ -7,6 +7,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import it.progetto.model.Admin;
 import it.progetto.repository.AdminRepository;
 
 @Component
