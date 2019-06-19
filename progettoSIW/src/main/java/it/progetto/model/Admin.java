@@ -19,6 +19,10 @@ public class Admin {
 		this.role=role;
 	}
 	
+	public Admin() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
@@ -55,5 +59,9 @@ public class Admin {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public boolean checkPassword(Admin adminNelDB) {
+		// TODO Auto-generated method stub
+		return this.password.equals(adminNelDB.getPassword());
 	}
 }
