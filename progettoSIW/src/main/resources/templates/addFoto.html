@@ -11,10 +11,12 @@
 			<tr>
 				<td>url:</td>
 				<td><input type="text" th:field="*{url}" /></td>
+				<td th:if="${#fields.hasErrors('url')}" th:errors="*{url}"></td>
 			</tr>
 			<tr>
 				<td>Fotografo:</td>
 				<td><input type="text" th:field="*{fotografo}" /></td>
+				<td th:if="${#fields.hasErrors('fotografo')}" th:errors="*{fotografo}"></td>
 			</tr>
 			<tr>
 				<td>

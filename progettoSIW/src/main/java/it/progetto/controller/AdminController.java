@@ -9,40 +9,53 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import it.progetto.model.Album;
 import it.progetto.model.Foto;
 import it.progetto.model.Fotografo;
 import it.progetto.services.AlbumService;
-import it.progetto.services.FotoService;
+import it.progetto.services.AlbumValidator;
 import it.progetto.services.FotografoService;
+import it.progetto.services.FotografoValidator;
 
 @Controller
 public class AdminController {
-	@Autowired
-	private FotoService fotoService;
-	@Autowired
-	private FotografoService fotografoservice;
-	@Autowired
-	private AlbumService albumservice;
 	
-	@PostMapping("/foto")
-	public String newFoto(@Valid @ModelAttribute("Foto") Foto foto,
-			Model model, BindingResult bindingResult) {
-		this.fotoService.inserisci(foto);
-		return "paginaAdmin.html";
-	}
+	@Autowired
+	private FotografoService fotografoService;
+	@Autowired
+	private AlbumService albumService;
+	@Autowired
+	private FotografoValidator fotografoValidator;
+	@Autowired
+	private AlbumValidator albumValidator;
+	
 	@PostMapping("/album")
 	public String newAlbum(@Valid @ModelAttribute("Album") Album album,
 			Model model, BindingResult bindingResult) {
-		this.albumservice.inserisci(album);
-		return "paginaAdmin.html";
+		this.albumValidator.validate(album, bindingResult);
+		if(!bindingResult.hasErrors()) {
+			this.albumService.inserisci(album);
+			model.addAttribute("album", this.albumService.tutti());
+			return "paginaAdmin.html";
+		}else {
+			return "addAlbum.html";
+		}
 	}
-	@PostMapping("/fotografo")
-	public String newFotografo(@Valid @ModelAttribute("Fotografo") Fotografo fotografo,
+	
+	@RequestMapping(value = "/fotografo", method = RequestMethod.POST)
+	public String newFotografo(@Valid @ModelAttribute("fotografo") Fotografo fotografo,
 			Model model, BindingResult bindingResult) {
-		this.fotografoservice.inserisci(fotografo);
-		return "paginaAdmin.html";
+		this.fotografoValidator.validate(fotografo, bindingResult);
+		if(!bindingResult.hasErrors()) {
+			this.fotografoService.inserisci(fotografo);
+			model.addAttribute("fotografo", this.fotografoService.tutti());
+			return "paginaAdmin.html";
+		}else {
+			return "addFotografo.html";
+		}
 	}
 	
 	@GetMapping("/addFoto")

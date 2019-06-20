@@ -9,21 +9,17 @@
 <body>
 	<h1>StockImages</h1>
 	<header>
-		<div>Ecco le informazioni riguardo il fotografo richiesto</div>
+		<div>Ecco le informazioni sui fotografi</div>
 	</header>
 	<section>
+	<th:block th:each="fotografo : ${fotografi}">
 		<div>
 			Nome: <span th:text="${fotografo.nome}">nome</span>
 		</div>
 		<div>
 			Cognome: <span th:text="${fotografo.cognome}">cognome</span>
 		</div>
-		<div>
-			<ul>
-				<th:block th:each="album :  {fotografo.album}">
-					<li th:text="${album}"></li>
-			</ul>
-		</div>
+		</th:block>
 	</section>
 </body>
 </html>

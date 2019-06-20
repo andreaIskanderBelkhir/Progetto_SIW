@@ -26,7 +26,6 @@ import it.progetto.services.AlbumService;
 import it.progetto.services.AlbumValidator;
 import it.progetto.services.FotoService;
 import it.progetto.services.FotoValidator;
-import it.progetto.services.FotografoService;
 import it.progetto.services.FotografoValidator;
 import it.progetto.services.RichiestaValidator;
 
@@ -133,15 +132,6 @@ public class MainController {
 		else {
 			return "presentazione.html";
 		}
-	}
-	
-	@RequestMapping(value="/foto/{id}",method=RequestMethod.GET)
-	public String aggiungiFoto(@PathVariable("id") Long id,Model model) {
-		if(id!=null && !carrello.getFoto().contains(this.fotoServices.fotoPerId(id))) {
-		carrello.getFoto().add(this.fotoServices.fotoPerId(id));
-		model.addAttribute("carrello", carrello);
-		}
-		return "presentazione.html";
 	}
 	
 	@GetMapping("/richiestaContratto")
