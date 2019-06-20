@@ -21,7 +21,7 @@ public class Foto {
 	private String localita;
 	private LocalDate data;
 	private String url;
-	@OneToMany
+	@OneToOne
 	private Album album;
 	
 	public Foto(String string, Album album1, Fotografo fotografoAndrea, String string2) {
