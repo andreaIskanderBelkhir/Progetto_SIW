@@ -142,4 +142,10 @@ public class MainController {
 		}
 		return "presentazione.html";
 	}
+	
+	@GetMapping("/richiestaContratto")
+	public String richiestaContratto(Model model) {
+		model.addAttribute("richiesta", new Richiesta());
+		return "richiestaContratto.html";
+	}
 }
