@@ -51,8 +51,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     // only admin can access the admin page
                     .antMatchers(HttpMethod.GET, "/paginaAdmin").hasAnyAuthority("ADMIN")
 
-                    // all authenticated users can access all the other pages (that is, welcome)
-                    .anyRequest().authenticated()
+                    // all user 
+                    .anyRequest().permitAll()
 
                 // login paragraph: we are going to define here how to login
                 // use formlogin protocol to perform login
