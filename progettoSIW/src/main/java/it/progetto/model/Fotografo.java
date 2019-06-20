@@ -18,7 +18,7 @@ public class Fotografo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	@OneToMany
+	@OneToMany(mappedBy = "fotografo")
 	@JoinColumn(name = "fotografo_id")
 	private List<Album> album;//1 a molti mono
 
