@@ -6,7 +6,7 @@
 	<div>
 		<h4>Inserisci i dati della foto</h4>
 	</div>
-	<form th:action="/foto" method="POST">
+	<form th:action="@{/foto}" method="POST" th:object="${foto}" >
 		<table>
 			<tr>
 				<td>url:</td>

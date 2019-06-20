@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -42,5 +43,23 @@ public class AdminController {
 			Model model, BindingResult bindingResult) {
 		this.fotografoservice.inserisci(fotografo);
 		return "paginaAdmin.html";
+	}
+	
+	@GetMapping("/addFoto")
+	public String addFoto(Model model) {
+		model.addAttribute("foto", new Foto());
+		return "addFoto.html";
+	}
+	
+	@GetMapping("/addFotografo")
+	public String addFotografo(Model model) {
+		model.addAttribute("fotografo", new Fotografo());
+		return "addFotografo.html";
+	}
+	
+	@GetMapping("/addAlbum")
+	public String addAlbum(Model model) {
+		model.addAttribute("album", new Album());
+		return "addAlbum.html";
 	}
 }

@@ -7,15 +7,15 @@
 	<div>
 		<h4>Inserisci i dati del fotografo</h4>
 	</div>
-	<form th:action="/fotografo" method="POST">
+	<form th:action="@{/fotografo}" method="POST" th:object="${fotografo}">
 		<table>
 			<tr>
 				<td>Nome:</td>
-				<td><input type="text" th:field="*{url}" /></td>
+				<td><input type="text" th:field="*{nome}" /></td>
 			</tr>
 			<tr>
 				<td>Cognome:</td>
-				<td><input type="text" th:field="*{url}" /></td>
+				<td><input type="text" th:field="*{cognome}" /></td>
 			</tr>
 			<tr>
 				<td>
