@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -20,7 +21,19 @@ public class Foto {
 	private String localita;
 	private LocalDate data;
 	private String url;
+	@OneToMany
+	private Album album;
 	
+	public Foto(String string, Album album1, Fotografo fotografoAndrea, String string2) {
+		// TODO Auto-generated constructor stub
+		this.nome=string;
+		this.fotografo=fotografoAndrea;
+		this.album=album1;
+		this.url=string2;
+	}
+	public Foto() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getUrl() {
 		return url;
 	}

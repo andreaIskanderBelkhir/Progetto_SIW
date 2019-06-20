@@ -22,6 +22,14 @@ public class Fotografo {
 	@JoinColumn(name = "fotografo_id")
 	private List<Album> album;//1 a molti mono
 
+	public Fotografo(String string, String string2) {
+		// TODO Auto-generated constructor stub
+		this.nome=string;
+		this.cognome=string2;
+	}
+	public Fotografo() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getNome() {
 		return nome;
 	}

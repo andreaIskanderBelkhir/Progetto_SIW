@@ -9,13 +9,26 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import it.progetto.model.Admin;
+import it.progetto.model.Album;
+import it.progetto.model.Foto;
+import it.progetto.model.Fotografo;
 import it.progetto.repository.AdminRepository;
+import it.progetto.repository.AlbumRepository;
+import it.progetto.repository.FotoRepository;
+import it.progetto.repository.FotografoRepository;
 
 @Component
 public class DBPopulation implements ApplicationRunner {
 
     @Autowired
     private AdminRepository adminR;
+    @Autowired
+    private FotoRepository fotoR;
+    @Autowired
+    private FotografoRepository fotografoR;
+    @Autowired
+    private AlbumRepository albumR;
+   
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
@@ -37,8 +50,13 @@ public class DBPopulation implements ApplicationRunner {
         String adminPassword = new BCryptPasswordEncoder().encode("admin");
         admin.setPassword(adminPassword);
         admin = this.adminR.save(admin);
-
+        Fotografo fotografoAndrea =new Fotografo("andrea","belkhir");
+        Album album1 = new Album ("cose",fotografoAndrea);
+        Foto foto1 = new Foto ("foto1",album1,fotografoAndrea,"https://bit.ly/2WWrQDJ");
         System.out.println("Done.\n");
+        this.albumR.save(album1);
+        this.fotografoR.save(fotografoAndrea);
+        this.fotoR.save(foto1);
     }
 }
 
