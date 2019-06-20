@@ -16,6 +16,7 @@
 	<description>progetto SIW</description>
 	<properties>
 		<java.version>1.8</java.version>
+		
 	</properties>
 	<dependencies> <!-- Spring JPA for automatic ORM (excluding tomcat-jdbc, that we already 
 			get from starter-web) -->
