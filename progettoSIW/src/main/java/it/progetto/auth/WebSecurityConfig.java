@@ -44,7 +44,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 // authorization paragraph: we are going to define here WHO can access WHAT pages
                 .authorizeRequests()
-
+                .antMatchers("/resources/**").permitAll()
                     // everyone (authenticated or not) can access the home page
                     .antMatchers(HttpMethod.GET, "/", "/index").permitAll()
 
