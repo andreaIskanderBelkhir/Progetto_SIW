@@ -19,8 +19,7 @@
 			</table>
 	</section>
 	<aside>
-		<form th:action="@{/fotografoVisualizza}" method="POST"
-			th:object="${fotografo}">
+		<form th:action="@{/fotografoVisualizza}" method="POST" th:object="${fotografo}">
 			<div>Cerca un fotografo</div>
 			<div>
 				&ensp; Nome:<input type="text" th:field="*{nome}" /> &ensp;<span
