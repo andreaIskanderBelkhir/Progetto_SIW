@@ -25,10 +25,7 @@
 				cognome se vuoto o incorretto</span>
 		</div>
 		<div>
-			Data di nascita : <input type="date" th:field="*{dataDiNascita}">
-			<span th:if="${#fields.hasErrors('dataDiNascita')}"
-				th:errors="*{dataDiNascita}"> qui ci va l'errore sulla data
-				di nascita se vuota o incorretta</span>
+			Data di nascita : <input type="text" th:field="*{dataDiNascita}"/>
 		</div>
 		<div>
 			<button type="submit">Invia</button>

@@ -86,13 +86,13 @@ public class MainController {
 		return "paginaAdmin.html";
 	}
 
-	@GetMapping("/richiesta")
-	public String richiestaContratto(@Valid @ModelAttribute("Richiesta") Richiesta richiesta,Model model,
+	@PostMapping("/richiesta")
+	public String richiestaContratto(@Valid @ModelAttribute Richiesta richiesta,Model model,
 			BindingResult bindingResult) {
 		this.richiestaValidator.validate(richiesta, bindingResult);
 		if(!bindingResult.hasErrors()) {
 			this.richiestaRepository.save(richiesta);
-			return "richiestaInviata";
+			return "richiestaInviata.html";
 		}
 		else {
 			return "richiestaContratto.html";

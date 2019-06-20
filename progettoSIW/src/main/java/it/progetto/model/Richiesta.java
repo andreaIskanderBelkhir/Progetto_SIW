@@ -1,6 +1,5 @@
 package it.progetto.model;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -18,7 +17,7 @@ public class Richiesta {
 	private Long id;
 	private String nomeRichiedente;
 	private String cognomeRichiedente;
-	private LocalDate dataDiNascita;
+	private String dataDiNascita;
 	@OneToMany
 	@JoinColumn(name = "richiesta_id")
 	List<Foto> fotografie;
@@ -45,10 +44,10 @@ public class Richiesta {
 	public void setCognomeRichiedente(String cognomeRichiedente) {
 		this.cognomeRichiedente = cognomeRichiedente;
 	}
-	public LocalDate getDataDiNascita() {
+	public String getDataDiNascita() {
 		return dataDiNascita;
 	}
-	public void setDataDiNascita(LocalDate dataDiNascita) {
+	public void setDataDiNascita(String dataDiNascita) {
 		this.dataDiNascita = dataDiNascita;
 	}
 
