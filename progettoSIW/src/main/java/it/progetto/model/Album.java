@@ -2,6 +2,7 @@ package it.progetto.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,7 +26,7 @@ public class Album {
 	@OneToMany
 	@JoinColumn(name = "album_id")
 	private List<Foto> fotoLista;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Fotografo fotografo;
 
 	public Album(String string, Fotografo fotografo) {

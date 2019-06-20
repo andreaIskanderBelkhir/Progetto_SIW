@@ -2,6 +2,7 @@ package it.progetto.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +19,7 @@ public class Fotografo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	@OneToMany(mappedBy = "fotografo")
+	@OneToMany
 	@JoinColumn(name = "fotografo_id")
 	private List<Album> album;//1 a molti mono
 
