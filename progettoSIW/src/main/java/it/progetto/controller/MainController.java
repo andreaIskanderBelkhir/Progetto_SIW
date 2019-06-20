@@ -26,6 +26,7 @@ import it.progetto.services.AlbumService;
 import it.progetto.services.AlbumValidator;
 import it.progetto.services.FotoService;
 import it.progetto.services.FotoValidator;
+import it.progetto.services.FotografoService;
 import it.progetto.services.FotografoValidator;
 import it.progetto.services.RichiestaValidator;
 
