@@ -122,7 +122,7 @@ public class MainController {
 		}
 	}
 	
-	@PostMapping("/fotoVisualizza/{nome}")
+	@PostMapping("/fotoVisualizza")
 	public String foto(@Valid @ModelAttribute Foto foto ,BindingResult bindingResult,Model model) {
 		this.fotoValidator.validate(foto, bindingResult);
 		if(!bindingResult.hasErrors()) {
