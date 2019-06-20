@@ -57,10 +57,6 @@ public class MainController {
 	private FotoService fotoServices;
 	
 	private static Carrello carrello = new Carrello();
-
-	public MainController() {
-		super();
-	}
 	
 	@GetMapping("/")
 	@PostMapping("/")
@@ -71,6 +67,10 @@ public class MainController {
 	@GetMapping("/presentazione")
 	@PostMapping("/presentazione")
 	public String presentazione(Model model) {
+		model.addAttribute("fotografo", new Fotografo());
+		model.addAttribute("foto", new Foto());
+		model.addAttribute("album", new Album());
+		model.addAttribute("carrello", carrello);
 		return "presentazione.html";
 	}
 

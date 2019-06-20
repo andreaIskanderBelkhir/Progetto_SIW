@@ -13,8 +13,7 @@
 			<table>
 				<tr>
 					<th:block th:each="foto : ${foto}">
-						<td><a th:href="@{'/foto' + '/' + ${foto.id}}"><img
-								alt="${foto.id}" src="${foto}">></a>Aggiungi al carrello</td>
+						<td><a th:href="@{'/foto' + '/' + ${foto.id}}"><span th:text="${foto.url}"></span></a></td>
 				</tr>
 			</table>
 	</section>
@@ -23,11 +22,11 @@
 			<div>Cerca un fotografo</div>
 			<div>
 				&ensp; Nome:<input type="text" th:field="*{nome}" /> &ensp;<span
-					th:if="${#fields.hasError('nome')}" th:errors="*{nome}"></span>
+					th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
 			</div>
 			<div>
 				Cognome:<input type="text" th:field="*{cognome}" /> &ensp;<span
-					th:if="${#fields.hasError('cognome')}" th:errors="*{cognome}"></span>
+					th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></span>
 			</div>
 			<div>
 				<button type="submit">Invia</button>
@@ -35,8 +34,8 @@
 		</form>
 		<form th:action="@{/fotoVisualizza}" method="POST" th:object="${foto}">
 			<div>
-				Cerca una foto<input type="text" th:object="*{nome}" /> &ensp;<span
-					th:if="${#fields.hasError('nome')}" th:errors="*{nome}"></span>
+				Cerca una foto<input type="text" th:field="*{nome}" /> &ensp;<span
+					th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
 			</div>
 			<div>
 				<button type="submit">Invia</button>
@@ -45,8 +44,8 @@
 		<form th:action="@{/albumVisualizza}" method="POST"
 			th:object="${album}">
 			<div>
-				Cerca un album<input type="text" th:object="*{nome}" /> &ensp;<span
-					th:if="${#fields.hasError('nome')}" th:errors="*{nome}"></span>
+				Cerca un album<input type="text" th:field="*{nome}" /> &ensp;<span
+					th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
 			</div>
 			<div>
 				<button type="submit">Invia</button>
@@ -57,7 +56,7 @@
 		<div>Carrello:</div>
 		<ul>
 			<th:block th:each="foto : ${carrello.foto}">
-				<li th:text="${foto}"></li>
+				<li th:text="${foto.url}"></li>
 		</ul>
 		<a href="richiestaContratto.html"><button type="submit">Conferma</button></a>
 	</aside>

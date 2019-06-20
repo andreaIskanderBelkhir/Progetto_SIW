@@ -16,7 +16,7 @@ public class Foto {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	@OneToOne
-	private Fotografo fotografo;//1 a molti mono
+	private Fotografo fotografo;//1 a 1 mono
 	private String localita;
 	private LocalDate data;
 	private String url;
